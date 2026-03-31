@@ -39,6 +39,21 @@ export default [
         {
           prefer: "type-imports"
         }
+      ],
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["@repo/web", "@repo/web/*"],
+              message: "Do not import frontend app code into other workspaces."
+            },
+            {
+              group: ["@repo/api", "@repo/api/*"],
+              message: "Do not import backend app code into other workspaces."
+            }
+          ]
+        }
       ]
     }
   },

@@ -17,6 +17,7 @@
     "clean": "turbo run clean --continue"
   },
   "devDependencies": {
+    "@types/node": "^24.0.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
