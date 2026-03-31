@@ -5,6 +5,7 @@
   "description": "Workout tracker monorepo",
   "packageManager": "pnpm@10.0.0",
   "scripts": {
+    "prepare": "husky",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "lint": "turbo run lint",
@@ -14,9 +15,12 @@
     "typecheck:root": "tsc -p tsconfig.json --noEmit",
     "format": "prettier --check .",
     "format:write": "prettier --write .",
+    "commitlint": "commitlint --edit",
     "clean": "turbo run clean --continue"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@types/node": "^24.0.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
@@ -25,6 +29,8 @@
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
     "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
     "prettier": "^3.5.3",
     "turbo": "^2.5.0",
     "typescript": "^5.8.2",

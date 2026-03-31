@@ -15,10 +15,11 @@ export default [
       "packages/prettier-config/**",
       "eslint.config.*",
       "prettier.config.*",
+      ".lintstagedrc.*",
       "**/*.config.js",
       "**/*.config.cjs",
-      "**/*.config.mjs"
-    ]
+      "**/*.config.mjs",
+    ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
@@ -27,18 +28,18 @@ export default [
     languageOptions: {
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: process.cwd()
+        tsconfigRootDir: process.cwd(),
       },
       globals: {
-        ...globals.node
-      }
+        ...globals.node,
+      },
     },
     rules: {
       "@typescript-eslint/consistent-type-imports": [
         "error",
         {
-          prefer: "type-imports"
-        }
+          prefer: "type-imports",
+        },
       ],
       "no-restricted-imports": [
         "error",
@@ -46,16 +47,16 @@ export default [
           patterns: [
             {
               group: ["@repo/web", "@repo/web/*"],
-              message: "Do not import frontend app code into other workspaces."
+              message: "Do not import frontend app code into other workspaces.",
             },
             {
               group: ["@repo/api", "@repo/api/*"],
-              message: "Do not import backend app code into other workspaces."
-            }
-          ]
-        }
-      ]
-    }
+              message: "Do not import backend app code into other workspaces.",
+            },
+          ],
+        },
+      ],
+    },
   },
-  eslintConfigPrettier
+  eslintConfigPrettier,
 ];
